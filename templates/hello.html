@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="This Is a page practice about HTML 5 inputs & forms">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/form.css') }}">
+<title>Input & Forms</title>
+</head>
+<body>
+<div class="container">
+
+        <header class="header">
+
+          <h1 id="title" class="text-center">Survey form for freecodecamp</h1>
+          <p id="description" class=" description text-center">Thank you for your time to improve our platform</p>
+
+        </header>
+
+        <!--Form start -->
+        <form action="check" method="post">
+            {{form.csrf}}
+            <div class="form-element">
+                <p>Date of Birth</p>
+                <input type="date" name="dateofBirth">
+            </div>
+
+            <div class="form-element">
+                <p>Gender</p>
+                <label for="female">
+                    <input type="radio" id="female" name="gender" class="input-radio" value="1">
+                    Female
+                </label>
+
+
+               <label for="male">
+                    <input type="radio" id="male" name="gender" class="input-radio" value="2">
+                    Male
+                </label>
+            </div>
+            <div class="form-element " >
+                <p>Systolic Blood Pressure</p>
+                 <input type="number" name="systolic">
+             </div>
+            <div class="form-element " >
+                <p>Diastolic Blood Pressure</p>
+                 <input type="number" name="diastolic">
+             </div>
+        	<div class="form-element " >
+                 <button type="submit" id="submit" class="submit-button">Submit</button>
+             </div>
+
+
+        </form>
+        <!-- form end-->
+</div>
+</body>
+</html>
